@@ -1,0 +1,325 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("fonts/JK-Maru-Gothic-M.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #768d8d; /* ミルク */
+  color: #4b2e2e; /* ココア */
+}
+
+header {
+  height: 130px; /* ヘッダーの高さを固定 */
+  padding: 0 1em;
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+  justify-content: flex-start; /* ← 左寄せに変更 */
+
+  background-color: #d2b48c; /* ビスケット */
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-content {
+  padding: 2em 1em;
+}
+
+.section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+h2 {
+  font-family: "MyCustomFont", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #eed172; /* ココア色などお好みで */
+    margin-bottom: 0em; /* デフォルトより小さく */
+
+}
+.h2-wrapper {
+  display: flex;
+  justify-content: flex-start; /* 左寄せ */
+  padding-left: 0em;           /* ここで右にずらす */
+  margin-bottom: 0em; /* 必要ならここも詰める */
+
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 50px; /* アイコンの幅 */
+  height: 30px; /* アイコンの高さ */
+  margin-right: 0.1em; /* テキストとの間隔 */
+  background-image: url("image/cup.gif"); /* アイコン画像のパス */
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  transform: translateY(-3px);
+}
+.h2-sub {
+  font-size: 1rem;         /* 通常の本文サイズに */
+  font-weight: normal;
+  margin-left: 0.5em;      /* h2との間に少し余白 */
+  color: #e4d19f;          /* チョコレート色など */
+  font-family: "MyCustomFont", sans-serif;
+}
+
+.header-inner {
+  position: relative;
+  z-index: 2; /* 星より前に出す */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 1em;
+}
+/* アクセスカウンター */
+.access-counter {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  z-index: 10;
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  .h2-sub {
+    font-size: 0.85rem;
+  }
+
+  .message-box {
+    font-size: 0.95rem;
+    padding: 0.8em 1em;
+  }
+}
+
+
+#menu-toggle {
+  background-color: #4b2e2e; /* ココア */
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+nav#sidebar {
+  width: 200px;
+  background-color: #f5deb3; /* ビスケット */
+  padding: 1em;
+  transition: transform 0.3s ease;
+}
+
+nav#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav#sidebar li {
+  margin-bottom: 1em;
+}
+
+nav#sidebar a {
+  text-decoration: none;
+  color: #4b2e2e;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  padding: 2em;
+  background-color: #768d8d; /* ミルク */
+}
+
+nav#sidebar.open {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  nav#sidebar {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+}
+ /* タイトル表示 */
+.logo {
+  height: 350px;       /* 明示的に小さく指定 */
+  width: auto;
+  display: block;     /* インライン隙間を消す */
+}
+.logo-link {
+  display: block;
+  width: 100%;
+  max-width: 1000px; /* PC時の最大幅 */
+  
+}
+
+.menu-icons {
+  display: flex;
+  gap: 1em;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #eed172;
+  cursor: pointer;
+}
+
+/* スマホ表示用に切り替え */
+@media screen and (max-width: 600px) {
+  .menu-icons {
+    display: none;
+    flex-direction: column;
+    background-color: #323152;
+    position: absolute;
+    top: 60px;
+    right: 1em;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-icons.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .menu-icons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.menu-icon {
+  width: 100％;   /* 横幅を指定 */
+  height: 100％;  /* 高さを指定 */
+  display: block;
+  transform: translateY(50px); /* 下に3pxずらす */
+
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); /* ドロップシャドウもそのまま */
+}
+
+/* 星空の背景のスタイル */
+.stars {
+  position: relative;
+  width: 100%; /* 星空の横幅 */
+  height: 200px; /* 星空の縦幅 */
+  background-image: linear-gradient(0deg, #768d8d, #115d89, #080f1c); /* 星空の背景色 */
+  overflow: hidden; /* 星が枠外にはみ出すのを防ぐ */
+}
+
+/* 星のスタイル */
+.star {
+  position: absolute;
+  display: block;
+  background-color: #fff; /* 星の色 */
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(#fff, 0.2); /* 星の影 */
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+/* 星がキラキラ光るアニメーション */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+/*メッセージボックス*/
+.message-box {
+  border: 2px solid #f5d742;       /* 星の黄色（明るいゴールド系） */
+  background-color: #323152;       /* ミルクティー色（淡いベージュ） */
+  color: #e6dbdb;                  /* チョコレート色（濃いブラウン） */
+  border-radius: 12px;             /* 角丸 */
+  padding: 1em 1.2em;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-top: 0em; /* もしくは 0 にしてぴったりくっつける */
+
+  margin: 1em auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ふんわり影（任意） */
+}
+/*アップデート*/
+.update-box {
+  border: 2px solid #f5d742;       /* 星の黄色 */
+  background-color: #323152;       /* 夜空っぽい背景色 */
+  color: #e6dbdb;                  /* 明るめのチョコレート色 */
+  border-radius: 12px;
+  padding: 1em 1.2em;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;                   /* 高さを固定 */
+  overflow-y: auto;                /* 縦スクロールを有効に */
+  margin: 1em auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* スクロールバーデザイン/全体に適用（Chrome, Edge, Safari） */
+*::-webkit-scrollbar {
+  width: 12px;           /* スクロールバーの幅 */
+  height: 12px;          /* 横スクロール用（任意） */
+}
+
+/* 背景（track） */
+*::-webkit-scrollbar-track {
+  background-color: #2a2940; /* 夜空っぽい背景色など */
+  border-radius: 8px;        /* 角丸 */
+}
+
+/* つまみ（thumb）に画像を使用 */
+*::-webkit-scrollbar-thumb {
+  background-image: url("image/star-thumb.png"); /* 画像素材のパス */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;        /* 角丸にする */
+  border: 2px solid #f5d742; /* 星の黄色で縁取り（任意） */
+}
