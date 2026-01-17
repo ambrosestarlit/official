@@ -1,0 +1,419 @@
+@charset "UTF-8";
+/* Scss Document */
+
+/*------------------------------------------------------------
+　全ページ共通
+------------------------------------------------------------*/
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Quicksand','Noto Sans JP', sans-serif,YuGothic, 'Yu Gothic medium', 'Hiragino Sans', Meiryo, 'sans-serif';
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #006086;
+  text-align: justify; }
+
+p {
+  margin: 20px 0; }
+
+p img {
+  margin: 10px 0; }
+
+a {
+  color: #006086; }
+
+h1, h2, h3, h4 {
+  font-weight: normal;
+  letter-spacing: 8px; }
+
+h1 {
+  font-size: 4rem; }
+  @media screen and (max-width: 1023px) {
+    h1 {
+      font-size: 3rem; } }
+
+h2 {
+  position: relative;
+  font-size: 3rem;
+  margin: 40px 0;
+  padding-left: 40px; }
+  h2::after {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 0;
+    content: "";
+    display: block;
+    background: url(../img/sparcle.png) no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px; }
+  @media screen and (max-width: 1023px) {
+    h2 {
+      font-size: 2.4rem; } }
+
+h3 {
+  position: relative;
+  font-size: 2.4rem;
+  margin: 40px 0;
+  padding-left: 40px; }
+  h3::after {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    content: "";
+    display: block;
+    background: #bad7db;
+    width: 20px;
+    height: 4px; }
+  @media screen and (max-width: 1023px) {
+    h3 {
+      font-size: 2rem; } }
+
+h4 {
+  font-size: 2rem; }
+  @media screen and (max-width: 1023px) {
+    h4 {
+      font-size: 1.8rem; } }
+
+em {
+  background: linear-gradient(rgba(186, 215, 219, 0.4), rgba(186, 215, 219, 0.4)) 0 100%/100% 8px no-repeat;
+  font-style: normal; }
+
+ul, ol, dl {
+  margin: 20px 0; }
+
+input {
+  border: 1px solid #006086;
+  padding: 4px; }
+
+input[type="submit"] {
+  cursor: pointer; }
+
+.btn {
+  background-color: #bad7db;
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 16px;
+  margin: 20px 0;
+  border: 0;
+  border-radius: 24px;
+  transition: 0.2s; }
+  .btn:hover {
+    background: #006086;
+    transition: 0.2s; }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+  @media screen and (max-width: 1023px) {
+    .flex {
+      display: block; } }
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+  grid-template-columns: auto 1fr; }
+
+ul.yoko {
+  display: flex;
+  flex-wrap: wrap; }
+  ul.yoko li {
+    margin-right: 20px;
+    margin-bottom: 20px; }
+    ul.yoko li:last-child {
+      margin-right: 0; }
+
+/*装飾*/
+.sparcle img {
+  width: 30px;
+  height: 30px; }
+
+.label dt, .label dd {
+  padding: 10px 0;
+  border-bottom: 1px dashed #bad7db; }
+  .label dt:last-of-type, .label dd:last-of-type {
+    border: 0; }
+.label dt {
+  padding-right: 40px;
+  text-decoration: none; }
+
+.arrow {
+  border: 2px solid #bad7db;
+  border-right: none;
+  border-bottom: none;
+  width: 16px;
+  height: 16px; }
+
+#spotlight .arrow {
+  border: 0; }
+
+.hr {
+  margin-bottom: 80px; }
+
+.bg {
+  position: sticky;
+  top: -120px;
+  z-index: -1; }
+  .bg::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    background: url(../img/bg2.png) top center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 120vh; }
+
+/*------------------------------------------------------------
+　横幅設定
+------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+  main {
+    margin: 0 auto;
+    width: 1024px; } }
+/*------------------------------------------------------------
+　ヘッダー
+------------------------------------------------------------*/
+header {
+  padding-top: 280px; }
+  header h1 {
+    text-align: center; }
+  header .sparcle img {
+    margin: 70px auto; }
+/*-------------------- メニュー --------------------*/
+  header .menu ul {
+    display: flex;
+    justify-content: center; }
+    header .menu ul li {
+      margin: 0 20px;
+      font-size: 2rem;
+      letter-spacing: 2px; }
+      @media screen and (max-width: 1023px) {
+        header .menu ul li {
+          margin: 0 10px;
+          font-size: 1.8rem; } }
+      header .menu ul li a {
+        display: block;
+        text-decoration: none; }
+        header .menu ul li a:hover {
+          transform: rotate(-10deg); }
+
+/*------------------------------------------------------------
+　コンテンツ
+------------------------------------------------------------*/
+main {
+  padding: 0 4px;
+  margin-top: 180px; }
+  @media screen and (min-width: 1024px) {
+    main > .wrapper .half {
+      width: calc(50% - 10px); } }
+  @media screen and (max-width: 1023px) {
+    main > .wrapper {
+      margin-bottom: 80px; } }
+  main section {
+    margin-bottom: 100px;
+    padding: 40px; }
+    @media screen and (max-width: 1023px) {
+      main section {
+        padding: 20px;
+        margin-bottom: 40px; } }
+    main section h3 {
+      margin-left: -40px; }
+      @media screen and (max-width: 1023px) {
+        main section h3 {
+          margin-left: -20px; } }
+  main section > h3:first-of-type {
+    margin-top: 0; }
+
+/*------------------------------------------------------------
+トップページ　
+------------------------------------------------------------*/
+/*-------------------- news --------------------*/
+.news ul {
+  height: 134px;
+  padding: 0 4px;
+  overflow: auto; }
+  .news ul li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #bad7db; }
+    .news ul li:last-child {
+      border: 0; }
+    .news ul li time {
+      margin-right: 20px; }
+      @media screen and (max-width: 1023px) {
+        .news ul li time {
+          display: block; } }
+
+/*-------------------- Profile --------------------*/
+.profile .wrapper img {
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%; }
+
+
+/*------------------------------------------------------------
+　小説ページ
+------------------------------------------------------------*/
+/*-------------------- 小説一覧ページ --------------------*/
+/*もくじ*/
+.mokuji dl {
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  margin-bottom: 40px; }
+  .mokuji dl dt {
+    grid-row: 1/4;
+    position: relative;
+    padding-right: 60px; }
+    .mokuji dl dt::after {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      right: 0;
+      display: block;
+      width: 40px;
+      height: 2px;
+      border-bottom: 1px dashed #bad7db; }
+
+/*名前変換*/
+.namechange {
+  padding: 40px 80px; }
+  .namechange input[type=text] {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%; }
+  .namechange input[type=submit] {
+    display: block;
+    margin: 20px auto; }
+
+/*一覧*/
+.novellist .noveltitle {
+  font-size: 1.8rem;
+  color: #dd9ea6; }
+.novellist .btn {
+  display: inline-block; }
+  .novellist .btn:hover {
+    background: #bad7db; }
+.novellist .list1 {
+  display: flex; }
+  .novellist .list1 li {
+    margin-right: 10px; }
+    .novellist .list1 li::after {
+      content: "/";
+      margin-left: 10px; }
+    .novellist .list1 li a {
+      color: #dd9ea6; }
+.novellist .list2 dt {
+  margin-bottom: 10px; }
+  .novellist .list2 dt a {
+    color: #dd9ea6; }
+.novellist .list2 dd {
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
+/*-------------------- 小説個別ページ --------------------*/
+.novel {
+  margin-bottom: 80px;
+  max-width: 856px; }
+  .novel .text {
+    padding: 0 20px; }
+  .novel .afterwords {
+    margin: 40px 0;
+    padding: 20px;
+    border-top: 1px dashed #bad7db;
+    bottom: 1px dashed #bad7db; }
+
+
+/*------------------------------------------------------------
+　イラスト
+------------------------------------------------------------*/
+
+.illustlist .grid {
+  -ms-grid-columns: repeat(auto-fit, 170px);
+  grid-template-columns: repeat(auto-fit, 170px);
+  grid-auto-rows: 170px;
+  grid-gap: 20px;
+  justify-content: center; }
+  @media screen and (max-width: 1023px) {
+    .illustlist .grid {
+      -ms-grid-columns: repeat(auto-fit, 158px);
+      grid-template-columns: repeat(auto-fit, 158px);
+      grid-auto-rows: 158px;
+      grid-gap: 10px; } }
+  .illustlist .grid .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+
+
+/*------------------------------------------------------------
+　ブログ
+------------------------------------------------------------*/
+.blog {
+  max-width: 864px;
+  margin: 0 auto 100px; }
+  .blog h3 {
+    margin-left: 0; }
+  .blog time {
+    display: block;
+    text-align: right;
+    padding: 4px 0;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #bad7db; }
+
+
+/*------------------------------------------------------------
+　メールフォーム
+------------------------------------------------------------*/
+.mail {
+  width: 100%; }
+  .mail label {
+    display: inline-block;
+    margin-bottom: 10px; }
+  .mail dt {
+    margin-right: 20px;
+    margin-bottom: 40px; }
+  .mail input {
+    width: 100%;
+    border-color: #006086; }
+  .mail textarea {
+    width: 100%;
+    margin-bottom: 40px;
+    border-color: #006086; }
+  .mail input[type=submit] {
+    width: auto; }
+
+
+/*------------------------------------------------------------
+　フッター
+------------------------------------------------------------*/
+footer {
+  padding: 20px 0; }
+
+/*トップヘやじるし*/
+  footer .toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; }
+    footer .toTop .arrow {
+      position: absolute;
+      top: calc(50% - 4px);
+      right: calc(50% - 10px);
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg); }
+
+/*クレジット*/
+  footer small {
+    display: block;
+    text-align: center; }
+    @media screen and (max-width: 1023px) {
+      footer small {
+        text-align: left;
+        font-size: 1rem; } }

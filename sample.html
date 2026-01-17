@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name = "viewport" content = "width = device-width, initial-scale=1, user-scalable=yes">
+<title>サイト名を入れてください</title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- 背景 -->
+  <div class="bg"></div>
+
+  <!--ヘッダー　サイト名-->
+  <header>
+    <h1>Your Site Name</h1>
+		<!--キラキラ-->
+		<div class="sparcle">
+			<img src="img/sparcle.png" alt="">
+		</div>
+
+		<!--メニュー-->
+		<nav class="menu">
+			<ul class="styleNone flex">
+				<li><a href="index.html">top</a></li>
+				<li><a href="novel.html">novel</a></li>
+				<li><a href="illust.html">illust</a></li>
+				<li><a href="blog.html">blog</a></li>
+				<li><a href="sample.html">sample</a></li>
+			</ul>
+		</nav>
+  </header><!--ヘッダー-->
+
+  <!--コンテンツ-->
+  <main>
+    <h2>Sample</h2>
+
+        <h2>&lt;h2&gt;見出し</h2>
+        <h3>&lt;h3&gt;見出し</h3>
+        <h4>&lt;h4&gt;見出し</h4>
+
+      <div class="hr"></div>
+
+      <em>emタグではこんなふうに強調されます。</em>
+
+      <p>aタグなどにclass="btn"をつけると、ボタンになります。</p><a href="" class="btn">ボタン</a>
+
+      <div class="hr"></div>
+
+      <p>dlリストにclass="grid label"をつけた場合</p>
+      <dl class="grid label">
+      <dt>項目</dt><dd>説明</dd>
+      <dt>項目</dt><dd>説明</dd>
+      </dl>
+
+      <div class="hr"></div>
+
+      <p>ulリストにclass="yoko"をつけると横並びのリストになります。</p>
+      <ul class="yoko">
+      <li>リスト</li>
+      <li>リスト</li>
+      <li>リスト</li>
+      </ul>
+
+      <div class="hr"></div>
+
+      <div class="wrapper flex">
+        <section class="half">
+          <p>２カラムにする場合</p>
+          <em>&lt;div class="wrapper flex"&gt;<br>
+            &lt;section class="half"&gt;</em><br>
+            この中に入れたものは横幅半分・余白ありで表示されます。<br>
+            <em>&lt;/section&gt;<br>
+          &lt;/div&gt;</em><br>
+          奇数番目のsectionが左側にきます。<br>
+          これは一つ目のsectionです。
+        </section>
+        <section class="half">
+            偶数番目のsectionが右側にきます。<br>
+            これは2つ目のsectionです。
+        </section>
+        <section class="half">
+            これは３つ目のsectionです。
+        </section>
+        <section class="half">
+            これは４つ目のsectionです。
+        </section>
+        <section>
+          class="half"をつけないsectionは、余白はつきますが、幅は半分になりません。
+        </section>
+      </div>
+
+
+  </main><!--コンテンツここまで-->
+
+  <!--フッター　クレジット-->
+  <footer>
+    <a href="#">
+      <div class="toTop">
+        <div class="arrow"></div>
+      </div>
+    </a>
+    <small>&copy; 2020 Your Site Name.Design by <a href="https://utsusemi.hiroec.com/" target="_blank">Utsusemi</a>.</small>
+  </footer><!--フッター　クレジットここまで-->
+
+
+<!--jQuery 読込-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+
+
+</body>
+</html>
