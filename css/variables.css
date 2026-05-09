@@ -1,0 +1,59 @@
+/* ============================================
+   AMBROSE STARLIT - CSS Variables & Theme
+   ============================================ */
+
+:root {
+  /* === Color Palette === */
+  --color-bg-primary:       #06090f;
+  --color-bg-secondary:     #0b1120;
+  --color-bg-card:          #0f1927;
+  --color-bg-card-hover:    #132030;
+  --color-bg-overlay:       rgba(6, 9, 15, 0.85);
+
+  --color-accent-primary:   #3a6fcd;   /* royal blue */
+  --color-accent-secondary: #1d3f7a;   /* deep navy */
+  --color-accent-glow:      rgba(58, 111, 205, 0.35);
+  --color-accent-gold:      #c8a84b;   /* subtle gold */
+
+  --color-text-primary:     #dce8f5;
+  --color-text-secondary:   #8da8c4;
+  --color-text-muted:       #445d7a;
+  --color-text-heading:     #f0f6ff;
+
+  --color-border:           rgba(58, 111, 205, 0.2);
+  --color-border-hover:     rgba(58, 111, 205, 0.55);
+  --color-divider:          rgba(255, 255, 255, 0.06);
+
+  /* === Typography === */
+  --font-display:   'Cormorant Garamond', 'Noto Serif JP', serif;
+  --font-heading:   'Cinzel', 'Noto Serif JP', serif;
+  --font-body:      'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+  --font-mono:      'JetBrains Mono', monospace;
+  --font-accent:    'Cormorant Garamond', serif;
+
+  /* === Spacing === */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   32px;
+  --space-xl:   64px;
+  --space-xxl:  120px;
+
+  /* === Sizing === */
+  --nav-height:       70px;
+  --content-max:      1200px;
+  --section-padding:  100px 0;
+  --border-radius:    4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* === Effects === */
+  --shadow-card:   0 4px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow:   0 0 30px rgba(58, 111, 205, 0.3);
+  --shadow-text:   0 0 20px rgba(58, 111, 205, 0.6);
+  --transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === Noise overlay === */
+  --noise-opacity: 0.03;
+}
