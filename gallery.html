@@ -6,42 +6,79 @@
   <title>GALLERY | スターリット研究所</title>
   <meta name="description" content="スターリット研究所の作品・キャラクター一覧です。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CONTENTS | スターリット研究所">
+  <meta property="og:title" content="GALLERY | スターリット研究所">
   <meta property="og:description" content="作品一覧と詳細ページへのリンクをまとめています。">
-  <meta property="og:image" content="./suguro-ayumu.png">
+  <meta property="og:image" content="./illust/yasashisadakejatarinai.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="./site.js" defer></script>
 </head>
-<body data-page="contents">
+<body data-page="contents" class="image-protect">
   <div id="site-header"></div>
 
   <main class="page-shell">
     <section class="page-hero">
       <span class="page-hero__label">WORKS</span>
       <h1>GALLERY</h1>
-      <p>これまで作成したイラスト作品です。サムネイルをクリックすると、各作品の詳細ページへ移動します。</p>
+      <p>これまで作成したイラスト作品です。サムネイルをクリックすると、画像をポップアップ表示します。</p>
     </section>
 
     <section class="section-card">
       <h2>作品一覧</h2>
       <div class="contents-grid">
-        <a class="contents-card" href="＃">
+        <button
+          class="contents-card js-gallery-popup"
+          type="button"
+          data-image="illust/yasashisadakejatarinai.png"
+          data-title="優しさだけじゃ、足りない"
+          aria-label="優しさだけじゃ、足りないを拡大表示"
+        >
           <figure class="contents-card__thumb">
-            <img src="illust/yasashisadakejatarinai.png" alt="「優しさだけじゃ、足りない」MVジャケット">
+            <img
+              src="illust/yasashisadakejatarinai.png"
+              alt="「優しさだけじゃ、足りない」MVジャケット"
+              draggable="false"
+              oncontextmenu="return false;"
+            >
           </figure>
           <div class="contents-card__body">
-            <span class="card-label">CHARACTER</span>
-            <h3>須黒歩生</h3>
+            <span class="card-label">ILLUST</span>
+            <h3>優しさだけじゃ、足りない</h3>
             <p>須黒歩生イメージソング「優しさだけじゃ、足りない」MVジャケット</p>
-            <span class="contents-card__more">DETAIL</span>
+            <span class="contents-card__more">VIEW</span>
           </div>
-        </a>
+        </button>
       </div>
     </section>
   </main>
+
+  <div
+    class="gallery-modal"
+    id="galleryModal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="galleryModalTitle"
+  >
+    <div class="gallery-modal__bg js-gallery-close"></div>
+
+    <div class="gallery-modal__panel">
+      <button class="gallery-modal__close js-gallery-close" type="button" aria-label="閉じる">×</button>
+      <p class="gallery-modal__title" id="galleryModalTitle"></p>
+
+      <div class="gallery-modal__image-wrap">
+        <img
+          id="galleryModalImage"
+          src=""
+          alt=""
+          draggable="false"
+          oncontextmenu="return false;"
+        >
+      </div>
+    </div>
+  </div>
 
   <div id="site-footer"></div>
 </body>

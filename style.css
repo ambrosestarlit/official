@@ -855,3 +855,138 @@ button {
     border-bottom: 0;
   }
 }
+
+
+/* =========================================================
+   GALLERY：画像ポップアップ・保存抑制
+   ---------------------------------------------------------
+   画像保存抑制：右クリック・ドラッグ・印刷などを抑制します。
+   ※ブラウザ仕様上、スクリーンショット自体の完全禁止はできません。
+========================================================= */
+
+.contents-card {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.image-protect img,
+.gallery-modal img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.gallery-modal.is-open {
+  display: flex;
+}
+
+.gallery-modal__bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(52, 43, 38, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.gallery-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  padding: clamp(16px, 2vw, 26px);
+  border: 1px solid rgba(222, 208, 200, 0.86);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 80px rgba(70, 55, 48, 0.26);
+}
+
+.gallery-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-chocolate);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-modal__title {
+  margin: 0 52px 14px 0;
+  color: var(--color-chocolate);
+  font-weight: 900;
+}
+
+.gallery-modal__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.gallery-modal__image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.gallery-modal__image-wrap img {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+body.is-modal-open {
+  overflow: hidden;
+}
+
+@media print {
+  body.image-protect {
+    display: none !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .gallery-modal {
+    padding: 14px;
+  }
+
+  .gallery-modal__panel {
+    width: min(100%, 94vw);
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .gallery-modal__image-wrap {
+    border-radius: 14px;
+  }
+
+  .gallery-modal__image-wrap img {
+    max-height: 72vh;
+  }
+}

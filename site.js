@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "TOP", href: "./index.html", page: "top" },
   { label: "ABOUT", href: "./about.html", page: "about" },
   { label: "CONTENTS", href: "./contents.html", page: "contents" },
+    { label: "GALLERY", href: "./gallery.html", page: "gallery" },
   { label: "LINK", href: "./link.html", page: "link" },
   { label: "TOOL", href: "./tool.html", page: "tool" }
 ];
@@ -68,4 +69,96 @@ function renderFooter() {
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   renderFooter();
+});
+
+
+// =========================================================
+// GALLERY：画像ポップアップ
+// =========================================================
+
+function setupGalleryModal() {
+  const modal = document.getElementById("galleryModal");
+  const modalImage = document.getElementById("galleryModalImage");
+  const modalTitle = document.getElementById("galleryModalTitle");
+  const popupButtons = document.querySelectorAll(".js-gallery-popup");
+  const closeButtons = document.querySelectorAll(".js-gallery-close");
+
+  if (!modal || !modalImage || !modalTitle || popupButtons.length === 0) return;
+
+  const openModal = (imageSrc, titleText) => {
+    modalImage.src = imageSrc;
+    modalImage.alt = titleText;
+    modalTitle.textContent = titleText;
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-modal-open");
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("is-modal-open");
+    modalImage.src = "";
+    modalImage.alt = "";
+    modalTitle.textContent = "";
+  };
+
+  popupButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const imageSrc = button.dataset.image;
+      const titleText = button.dataset.title || "";
+      if (!imageSrc) return;
+      openModal(imageSrc, titleText);
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+}
+
+// =========================================================
+// 画像保存抑制
+// =========================================================
+
+function setupImageProtect() {
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target.closest(".image-protect") || event.target.closest(".gallery-modal")) {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener("dragstart", (event) => {
+    if (event.target.tagName === "IMG") {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    const key = event.key.toLowerCase();
+    const ctrlOrCmd = event.ctrlKey || event.metaKey;
+
+    if (ctrlOrCmd && ["s", "p", "u"].includes(key)) {
+      event.preventDefault();
+    }
+
+    if (ctrlOrCmd && event.shiftKey && ["i", "j", "c"].includes(key)) {
+      event.preventDefault();
+    }
+
+    if (key === "f12") {
+      event.preventDefault();
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupGalleryModal();
+  setupImageProtect();
 });
