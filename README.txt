@@ -10,3 +10,9 @@
 - top.png : TOP用イラスト。「やさしさだけじゃ足りない.png」をリネームしたもの。
 
 GitHub Pagesでは、ZIP内のファイルをリポジトリ直下にアップロードしてください。
+
+
+追加ページ：
+- contents.html：作品一覧ページ
+- suguro-ayumu.html：須黒歩生 詳細ページ
+- suguro-ayumu.png：須黒歩生 画像
